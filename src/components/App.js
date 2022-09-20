@@ -14,16 +14,14 @@ const App = () => {
     };
     fetchData();
   }, []);
-  if (isLoading) {
+  if (dogs.isLoading) {
     return <p>Loading...</p>;
   }
-  {!isLoading && 
-dogs.data.map((dog) => {
+  if(!dogs.isLoading){
     return(
-        <img src={dog.message} alt="A Random Dog" />
+      <img src={dogs.data.message} alt="A Random Dog" />
     )
-})
-}
+  }
 };
 
 export default App;
